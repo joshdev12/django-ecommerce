@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -95,28 +95,17 @@ REST_FRAMEWORK = {
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'ecommerce',
-            'USER': 'postgres',
-            'PASSWORD': 'Bigsmoke',
-            'HOST': 'localhost',
-            'PORT': 5432,
-        }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '4Wwshvp7e51gSw0Kzz3L',
+        'HOST': 'containers-us-west-90.railway.app',
+        'PORT': 6301,
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'railway',
-            'USER': 'postgres',
-            'PASSWORD': '4Wwshvp7e51gSw0Kzz3L',
-            'HOST': 'containers-us-west-90.railway.app',
-            'PORT': 6301,
-        }
-    }
+}
     
 
 
